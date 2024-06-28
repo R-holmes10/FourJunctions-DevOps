@@ -1,6 +1,6 @@
 resource "aws_launch_configuration" "nginx" {
   name          = "nginx-launch-configuration"
-  image_id      = "ami-0a313d6098716f372"  # Ubuntu Server 20.04 LTS (replace with latest)
+  image_id      = "ami-0f30a9c3a48f3fa79"  
   instance_type = "t2.micro"
 
   user_data = <<-EOF
