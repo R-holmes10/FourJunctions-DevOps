@@ -10,5 +10,5 @@
    ```sh
    kubectl get nodes
 
-   ![Setup Master and Worker Nodes](Kubernetes/Screenshot/Cluster%20setup.png)
+![Setup Master and Worker Nodes](Kubernetes/Screenshot/Cluster%20setup.png)
 
