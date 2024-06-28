@@ -43,17 +43,38 @@
    kubectl get ingress -o wide
    
 ![Cat Yaml files](Kubernetes/Screenshot/Running%20yaml%20files.png)
-![Cat Yaml files](Kubernetes/Screenshot/Created%20resources.png)
+![Cat Yaml files2](Kubernetes/Screenshot/Created%20resources.png)
 
 ## Terraform
 
-1. Installation of Terraform in the Ubuntu Instance.
+1. **Installation of Terraform in the Ubuntu Instance.**
    ```sh
    wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
    echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee       /etc/apt/sources.list.d/hashicorp.list
    sudo apt update && sudo apt install terraform
-2. 
+   terraform --version
+   which terraform
+![Install-Terraform](AWS/Screenshot/terraform-install.png)
 
+2. **Configure AWS CLI to inject ACCESS_KEY and SECRET_KEY.**
+   ```sh
+   aws configure
+
+3. **Initialising Terraform in my working directory, and Validate the syntax and configuration of the Terraform files.** 
+   ```sh
+   cd FourJunctions/AWS
+   ls
+   terraform init
+   terraform validate
+![Init-Terraform](AWS/Screenshot/terra-init-validate.png)
+
+4. **Generate and review an execution plan for Terraform**
+  ```sh
+   terraform plan
+![Plan-Terraform](AWS/Screenshot/terra-plan.png)
+![Plan2-Terraform](AWS/Screenshot/terra-plan2.png)
+
+5. 
 
 
 
