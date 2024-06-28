@@ -69,17 +69,29 @@
 ![Init-Terraform](AWS/screenshot/terra-init-validate.png)
 
 4. **Generate and review an execution plan for Terraform**
-  ```sh
+   ```sh
    terraform plan
 
+![Init-Terraform](AWS/screenshot/terra-plan.png)
+![Init-Terraform](AWS/screenshot/terra-plan2.png)
 
-![Plan-Terraform](AWS/screenshot/terra-plan.png)
+5. **Now, Applying the Terraform execution plan to make changes to the infrastructure as defined in the Terraform configuration files. (`variables.tf`, `autoscaling.tf` and `route53.tf`)**
 
-![Plan2-Terraform](AWS/screenshot/terra-plan2.png)
+   **Note**: Due to the unavailability of a domain, I've skipped the Route53.tf file from terraform execution, but the file is there for the steps to be followed for the Route53                setup through terraform.
+   ```sh
+   terraform apply --auto-approve
 
-5. 
+![Init-Terraform](AWS/screenshot/terraform-apply.png)
 
+6. **After the successful infrastructure creation through Terraform, two instances named `nginx-asg` are created, with Public IP and SSH disabled.**
+![Init-Terraform](AWS/screenshot/nginx-asg-1.png)
+![Init-Terraform](AWS/screenshot/nginx-asg-2.png)
 
+7. **As per the configuration, an Auto-Scaling Group, subnets, NAT Gateway and VPC named `ionginx` have been created.**
+![Init-Terraform](AWS/screenshot/ASG.png)
+![Init-Terraform](AWS/screenshot/subnets.png)
+![Init-Terraform](AWS/screenshot/NAT-Gateway.png)
+![Init-Terraform](AWS/screenshot/ionginx-vpc.png)
 
 
 
