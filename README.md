@@ -13,7 +13,7 @@
 ![Setup Master and Worker Nodes](Kubernetes/Screenshot/Cluster%20setup.png)
 
 2. **Clone GitHub Repository**
-   Clone the GitHub repository containing Kubernetes YAML files (`nginx-deploy.yaml`, `nginx-service.yaml`, `ingress.yaml`).
+   Clone the GitHub repository containing Kubernetes YAML files (`nginx-deploy.yaml`, `nginx-svc.yaml`, `ingress.yaml`).
 
    ```sh
    git clone https://github.com/R-holmes10/FourJunctions-DevOps.git
@@ -24,7 +24,7 @@
 3. **Verify that the YAML files are present in the directory**
    ```sh
    cat nginx-deploy.yaml
-   cat nginx-service.yaml
+   cat nginx-svc.yaml
    cat ingress.yaml
 ![Cat Yaml files](Kubernetes/Screenshot/Yaml%20files%20II.png)
 
@@ -32,7 +32,7 @@
    Apply the Kubernetes YAML files to create Deployment, Service, and Ingress resources.
    ```sh
    kubectl apply -f nginx-deploy.yaml
-   kubectl apply -f nginx-service.yaml
+   kubectl apply -f nginx-svc.yaml
    kubectl apply -f ingress.yaml
 
 5. **Verify Resources**
