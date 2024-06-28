@@ -2,8 +2,6 @@ provider "aws" {
   region = "us-east-2"  
 }
 
-variable "availability_zones" {}
-
 resource "aws_vpc" "ionginx_vpc" {
   cidr_block = "10.0.0.0/16"
   tags = {
