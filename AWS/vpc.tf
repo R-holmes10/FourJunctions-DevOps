@@ -59,11 +59,13 @@ resource "aws_route_table_association" "public" {
 }
 
 resource "aws_eip" "nat" {
-  vpc      = true
+  domain = "vpc"
+  
   lifecycle {
     create_before_destroy = true
   }
 }
+
 
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat.id
