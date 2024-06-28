@@ -75,7 +75,7 @@
 ![Init-Terraform](AWS/screenshot/terra-plan.png)
 ![Init-Terraform](AWS/screenshot/terra-plan2.png)
 
-5. **Now, Applying the Terraform execution plan to make changes to the infrastructure as defined in the Terraform configuration files. (`variables.tf`, `autoscaling.tf` and `route53.tf`)**
+5. **Now, Applying the Terraform execution plan to make changes to the infrastructure as defined in the Terraform configuration files. (`variables.tf`, `vpc.tf` ,`autoscaling.tf` and `route53.tf`)**
 
    **Note**: Due to the unavailability of a domain, I've skipped the Route53.tf file from terraform execution, but the file is there for the steps to be followed for the Route53                setup through terraform.
    ```sh
