@@ -12,3 +12,11 @@
 
 ![Setup Master and Worker Nodes](Kubernetes/Screenshot/Cluster%20setup.png)
 
+2. **Clone GitHub Repository**
+   Clone the GitHub repository containing Kubernetes YAML files (`nginx-deploy.yaml`, `nginx-service.yaml`, `ingress.yaml`).
+
+   ```sh
+   git clone https://github.com/your-username/your-repo.git
+   cd FourJunctions-DevOps/Kubernetes
+![Cloned GitHub](Kubernetes/Screenshot/Yaml%20files%20I.png)
+
