@@ -54,7 +54,7 @@
    sudo apt update && sudo apt install terraform
    terraform --version
    which terraform
-![Install-Terraform](AWS/Screenshot/terraform-install.png)
+![Install-Terraform](AWS/screenshot/terraform-install.png)
 
 2. **Configure AWS CLI to inject ACCESS_KEY and SECRET_KEY.**
    ```sh
@@ -66,13 +66,16 @@
    ls
    terraform init
    terraform validate
-![Init-Terraform](AWS/Screenshot/terra-init-validate.png)
+![Init-Terraform](AWS/screenshot/terra-init-validate.png)
 
 4. **Generate and review an execution plan for Terraform**
   ```sh
    terraform plan
-![Plan-Terraform](AWS/Screenshot/terra-plan.png)
-![Plan2-Terraform](AWS/Screenshot/terra-plan2.png)
+
+
+![Plan-Terraform](AWS/screenshot/terra-plan.png)
+
+![Plan2-Terraform](AWS/screenshot/terra-plan2.png)
 
 5. 
 
