@@ -2,6 +2,8 @@ provider "aws" {
   region = "us-east-2"  
 }
 
+variable "availability_zones" {}
+
 resource "aws_vpc" "ionginx_vpc" {
   cidr_block = "10.0.0.0/16"
   tags = {
@@ -14,7 +16,7 @@ resource "aws_subnet" "public" {
   vpc_id            = aws_vpc.ionginx_vpc.id
   cidr_block        = cidrsubnet(aws_vpc.ionginx_vpc.cidr_block, 8, count.index)
   map_public_ip_on_launch = true
-  availability_zone = element(local.availability_zones, count.index)
+  availability_zone = element(var.availability_zones, count.index)
 
   tags = {
     Name = "public-subnet-${count.index}"
@@ -25,7 +27,7 @@ resource "aws_subnet" "private" {
   count             = 3
   vpc_id            = aws_vpc.ionginx_vpc.id
   cidr_block        = cidrsubnet(aws_vpc.ionginx_vpc.cidr_block, 8, count.index + 3)
-  availability_zone = element(local.availability_zones, count.index)
+  availability_zone = element(var.availability_zones, count.index)
 
   tags = {
     Name = "private-subnet-${count.index}"
@@ -59,12 +61,15 @@ resource "aws_route_table_association" "public" {
 }
 
 resource "aws_eip" "nat" {
-  vpc = true
+  vpc      = true
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public[0].id
+  subnet_id     = aws_subnet.public[0].id  # Use one of the public subnets
 }
 
 resource "aws_route_table" "private" {
