@@ -100,8 +100,10 @@
 
 8. **Deployed Nginx on each server, with `Private-IP`**
 ![Init-Terraform](AWS/screenshot/nginx-asg-I.png)
-![Init-Terraform](AWS/screenshot/nginx-asg-II.png)
+<i>Figure 1: EC2 Instance - Nginx-ASG I</i>
 
+![Init-Terraform](AWS/screenshot/nginx-asg-II.png)
+<i>Figure 2: EC2 Instance - Nginx-ASG II</i>
 
 
    
