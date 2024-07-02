@@ -98,6 +98,9 @@
 ![Init-Terraform](AWS/screenshot/NAT-Gateway.png)
 ![Init-Terraform](AWS/screenshot/ionginx-vpc.png)
 
+8. **Deployed Nginx on each server, with `Private-IP`**
+![Init-Terraform](AWS/screenshot/nginx-asg-I.png)
+![Init-Terraform](AWS/screenshot/nginx-asg-II.png)
 
 
 
