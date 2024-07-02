@@ -45,7 +45,7 @@
 ![Cat Yaml files](Kubernetes/Screenshot/Running%20yaml%20files.png)
 ![Cat Yaml files2](Kubernetes/Screenshot/Created%20resources.png)
 
-6. **Deployed default Nginx page on example.com** using `http://<Internal_IP_Address>:ClusterIP_Port`
+6. **Deployed default Nginx page on example.com** using `http://<Internal_IP_Address_KMaster>:ClusterIP_Port`
    ```sh
    172.31.9.207:30262
 
