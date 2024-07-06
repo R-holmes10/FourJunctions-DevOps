@@ -29,7 +29,7 @@
 
 ![Cat Yaml files](Kubernetes/screenshot/yaml-file.png)
 
-4. **Verify Resources and Access application (www.example.com) using the NodePort**
+4. **Verify Resources and Access application (Host-based Routing - web.example.com) using the NodePort**
    
    To check that the resources (Deployments, Services, Pods, Ingress) are created successfully.
    ```sh
@@ -39,14 +39,14 @@
    kubectl get pods -n ingress-nginx -o wide
    kubectl -n ingress-nginx get ingressclasses
 
-   #To access application using NodePort
-   curl 172.31.7.186:32028 -H 'Host: web .example.com'
+   #To access the application using NodePort
+   curl 172.31.7.186:32028 -H 'Host: web.example.com'
    
 ![Cat Yaml files](Kubernetes/screenshot/resources.png)
 
 ## Terraform
 
-1. **Installation of Terraform in the Ubuntu Instance.**
+1. **Installation of Terraform in the Ubuntu Instance**
    ```sh
    wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
    echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee       /etc/apt/sources.list.d/hashicorp.list
@@ -55,11 +55,11 @@
    which terraform
 ![Install-Terraform](AWS/screenshot/terraform-install.png)
 
-2. **Configure AWS CLI to inject ACCESS_KEY and SECRET_KEY.**
+2. **Configure AWS CLI to inject ACCESS_KEY and SECRET_KEY**
    ```sh
    aws configure
 
-3. **Initialising Terraform in my working directory, and Validate the syntax and configuration of the Terraform files.** 
+3. **Initialising Terraform in my working directory, and Validate the syntax and configuration of the Terraform files** 
    ```sh
    cd FourJunctions/AWS
    ls
@@ -82,11 +82,11 @@
 
 ![Init-Terraform](AWS/screenshot/terraform-apply.png)
 
-6. **After the successful infrastructure creation through Terraform, two instances named `nginx-asg` are created, with Public IP and SSH disabled.**
+6. **After the successful infrastructure creation through Terraform, two instances named `nginx-asg` are created, with Public IP and SSH disabled**
 ![Init-Terraform](AWS/screenshot/nginx-asg-1.png)
 ![Init-Terraform](AWS/screenshot/nginx-asg-2.png)
 
-7. **As per the configuration, an Auto-Scaling Group, subnets, NAT Gateway and VPC named `ionginx` have been created.**
+7. **As per the configuration, an Auto-Scaling Group, subnets, NAT Gateway and VPC named `ionginx` have been created**
 ![Init-Terraform](AWS/screenshot/ASG.png)
 ![Init-Terraform](AWS/screenshot/subnets.png)
 ![Init-Terraform](AWS/screenshot/NAT-Gateway.png)
