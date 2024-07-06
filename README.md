@@ -10,46 +10,40 @@
    ```sh
    kubectl get nodes
 
-![Setup Master and Worker Nodes](Kubernetes/Screenshot/Cluster%20setup.png)
+![Setup Master and Worker Nodes](Kubernetes/screenshot/cluster.png)
 
-2. **Clone GitHub Repository**
-   Clone the GitHub repository containing Kubernetes YAML files (`nginx-deploy.yaml`, `nginx-svc.yaml`, `ingress.yaml`).
-
+2. **Setting up ingress-controller**
+   
    ```sh
-   git clone https://github.com/R-holmes10/FourJunctions-DevOps.git
-   cd FourJunctions-DevOps/Kubernetes
+   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.3/deploy/static/provider/baremetal/deploy.yaml
 
-![Cloned GitHub](Kubernetes/Screenshot/Yaml%20files%20I.png)
+![Cloned GitHub](Kubernetes/screenshot/ingress-install.png)
 
-3. **Verify that the YAML files are present in the directory**
+3. **Creation of `server-ingress.yaml` to create namespace, service, deployment, and ingress-class-object**
+   <br>
+   It also involves checking for ingress resources and controllers.
    ```sh
-   cat nginx-deploy.yaml
-   cat nginx-svc.yaml
-   cat ingress.yaml
-![Cat Yaml files](Kubernetes/Screenshot/Yaml%20files%20II.png)
+   kubectl get services -n ingress-nginx
+   kubectl -n ingress-nginx get ingressclasses
+   cat server-ingress.yaml
 
-4. **Apply Changes to YAML Files**
-   Apply the Kubernetes YAML files to create Deployment, Service, and Ingress resources.
-   ```sh
-   kubectl apply -f nginx-deploy.yaml
-   kubectl apply -f nginx-svc.yaml
-   kubectl apply -f ingress.yaml
+![Cat Yaml files](Kubernetes/screenshot/yaml-file.png)
 
-5. **Verify Resources**
+4. **Verify Resources and Access application (www.example.com) using the NodePort**
+   <br>
    To check that the resources (Deployments, Services, Ingresses) are created successfully.
    ```sh
-   kubectl get deploy -o wide
-   kubectl get svc -o wide
-   kubectl get ingress -o wide
+   #To view resources
+   kubectl get deploy -n ingress-nginx -o wide
+   kubectl get svc -n ingress-nginx -o wide
+   kubectl get pods -n ingress-nginx -o wide
+   kubectl -n ingress-nginx get ingressclasses
+
+   #To access application using NodePort
+   curl 172.31.7.186:32028 -H 'Host: web .example.com'
    
-![Cat Yaml files](Kubernetes/Screenshot/Running%20yaml%20files.png)
-![Cat Yaml files2](Kubernetes/Screenshot/Created%20resources.png)
+![Cat Yaml files](Kubernetes/screenshot/resources.png)
 
-6. **Deployed default Nginx page on example.com** 
-   ```sh
-   172.31.9.207:30262
-
-![Cat Yaml files](Kubernetes/Screenshot/deployed-page.png)
 ## Terraform
 
 1. **Installation of Terraform in the Ubuntu Instance.**
