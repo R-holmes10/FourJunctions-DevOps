@@ -21,7 +21,7 @@
 
 3. **Creation of `server-ingress.yaml` to create namespace, service, deployment, and ingress-class-object**
    <br>
-   It also involves checking for ingress resources and controllers.
+   It also involves checking for ingress resources and controller.
    ```sh
    kubectl get services -n ingress-nginx
    kubectl -n ingress-nginx get ingressclasses
