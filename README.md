@@ -31,7 +31,7 @@
 
 4. **Verify Resources and Access application (www.example.com) using the NodePort**
    <br>
-   To check that the resources (Deployments, Services, Ingresses) are created successfully.
+   To check that the resources (Deployments, Services, Pods, Ingress) are created successfully.
    ```sh
    #To view resources
    kubectl get deploy -n ingress-nginx -o wide
