@@ -20,7 +20,7 @@
 ![Cloned GitHub](Kubernetes/screenshot/ingress-install.png)
 
 3. **Creation of `server-ingress.yaml` to create namespace, service, deployment, and ingress-class-object**
-   <br>
+   
    It also involves checking for ingress resources and controller.
    ```sh
    kubectl get services -n ingress-nginx
@@ -30,7 +30,7 @@
 ![Cat Yaml files](Kubernetes/screenshot/yaml-file.png)
 
 4. **Verify Resources and Access application (www.example.com) using the NodePort**
-   <br>
+   
    To check that the resources (Deployments, Services, Pods, Ingress) are created successfully.
    ```sh
    #To view resources
