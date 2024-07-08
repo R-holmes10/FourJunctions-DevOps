@@ -1,7 +1,7 @@
 # FourJunctions--Assignment
 
 - [Kubernetes](#kubernetes)
-- [Terraform](#terraform)
+- [AWS](#aws)
 
 ## Kubernetes
 1. **Setup Master and Worker Nodes**
@@ -44,7 +44,7 @@
    
 ![Cat Yaml files](Kubernetes/screenshot/resources.png)
 
-## Terraform
+## AWS
 
 1. **Installation of Terraform in the Ubuntu Instance**
    ```sh
