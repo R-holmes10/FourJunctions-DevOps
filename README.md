@@ -1,4 +1,4 @@
-# FourJunctions--Assignment
+# Project Flow and Steps
 
 - [Kubernetes](#kubernetes)
 - [AWS](#aws)
